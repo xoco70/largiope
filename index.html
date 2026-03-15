@@ -227,6 +227,13 @@
       background: #f8f9fa;
     }
 
+    #vinyaqui-widget {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.6rem;
@@ -238,6 +245,7 @@
 
     }
   </style>
+  <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css">
 </head>
 
 <body>
@@ -285,6 +293,16 @@
           <p><strong>Email :</strong> <a href="mailto:bezert.paul@laposte.net">bezert.paul@laposte.net</a></p>
         </div>
       </section>
+
+      <!-- Widget de réservation Vinyaqui -->
+      <div id="vinyaqui-widget"></div>
+      <script
+        src="https://vinyaqui.com/widget/booking-widget.js"
+        data-api-base="https://vinyaqui.com/api"
+        data-activity="activite-test-1"
+        data-api-key="vk_aRQBDAQDV2Aes0FcbpSf2SZA1iOEV2RJhxao8kUNypmgsUZiP3coTvoCshlz"
+        data-target="#vinyaqui-widget"
+      ></script>
 
       <div class="cta-box">
         <p><strong>Envie de découvrir nos vins ?</strong></p>
