@@ -232,6 +232,28 @@
       justify-content: center;
       flex-wrap: wrap;
       margin-bottom: 2rem;
+      /* Couleurs alignées sur la page */
+      --vw-primary: #8b4513;
+      --vw-primary-hover: #5c3317;
+      --vw-primary-light: #faf8f6;
+      --vw-text: #2c3e50;
+      --vw-text-muted: #7f8c8d;
+      --vw-border: #e8d5c4;
+      --vw-font: 'Georgia', serif;
+      --vw-radius: 8px;
+      --vw-radius-sm: 5px;
+      --vw-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    #vinyaqui-widget .vw-select:focus {
+      border-color: #8b4513;
+      box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.15);
+    }
+
+    #vinyaqui-widget .vw-alert--info {
+      background: #faf8f6;
+      border-color: #e8d5c4;
+      color: #5c3317;
     }
 
     @media (max-width: 600px) {
@@ -296,13 +318,11 @@
 
       <!-- Widget de réservation Vinyaqui -->
       <div id="vinyaqui-widget"></div>
-      <script
-        src="https://vinyaqui.com/widget/booking-widget.js"
-        data-api-base="https://vinyaqui.com/api"
-        data-activity="activite-test-1"
+      <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css">
+      <script src="https://vinyaqui.com/widget/booking-widget.js" data-api-base="https://vinyaqui.com/api"
+        data-activity="balade-dans-les-vignes-et-degustation-au-domaine-largiope"
         data-api-key="vk_aRQBDAQDV2Aes0FcbpSf2SZA1iOEV2RJhxao8kUNypmgsUZiP3coTvoCshlz"
-        data-target="#vinyaqui-widget"
-      ></script>
+        data-target="#vinyaqui-widget"></script>
 
       <div class="cta-box">
         <p><strong>Envie de découvrir nos vins ?</strong></p>
