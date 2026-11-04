@@ -99,7 +99,7 @@
         <li><a href="#cuvees">Vinos</a></li>
         <li><a href="#visite">Visita</a></li>
         <li><a href="#contact">Contacto</a></li>
-        <li><ul class="lang-switch" aria-label="Idioma"><li><a href="/" hreflang="fr" lang="fr" title="Français">FR</a></li><li><a href="/en/" hreflang="en" lang="en" title="English">EN</a></li><li><a href="/es/" hreflang="es" lang="es" title="Español" aria-current="page">ES</a></li><li><a href="/ca/" hreflang="ca" lang="ca" title="Català">CA</a></li></ul></li>
+        <li class="lang-switch"><details><summary aria-label="Idioma"><svg class="lang-globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>ES</span><svg class="lang-chevron" viewBox="0 0 12 8" width="10" height="7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></summary><ul><li><a href="/" hreflang="fr" lang="fr">Français</a></li><li><a href="/en/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/ca/" hreflang="ca" lang="ca">Català</a></li></ul></details></li>
         <li class="nav-cta"><a href="#visite" data-no-spy>Reservar</a></li>
       </ul>
     </nav>
@@ -330,11 +330,21 @@
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
 
+      var langMenu = document.querySelector('.lang-switch details');
+      function closeLang() { langMenu.removeAttribute('open'); }
+      document.addEventListener('click', function (event) {
+        if (!langMenu.contains(event.target)) { closeLang(); }
+      });
+
       links.addEventListener('click', function (event) {
         if (event.target.closest('a')) { closeMenu(); }
       });
 
       document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && langMenu.open) {
+          closeLang();
+          langMenu.querySelector('summary').focus();
+        }
         if (event.key === 'Escape' && links.classList.contains('is-open')) {
           closeMenu();
           toggle.focus();

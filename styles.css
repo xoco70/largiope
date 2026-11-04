@@ -321,36 +321,93 @@ p:last-child {
   }
 }
 
-/* Sélecteur de langue */
+/* Sélecteur de langue : menu déroulant */
 .lang-switch {
-  display: flex;
-  list-style: none;
+  position: relative;
   margin-left: 0.5rem;
+}
+
+.lang-switch summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--schiste);
   font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  list-style: none;
 }
 
-.nav-links .lang-switch a {
-  padding: 0.55rem 0.45rem;
-  font-weight: 500;
+.lang-switch summary::-webkit-details-marker {
+  display: none;
 }
 
-.nav-links .lang-switch a[aria-current="page"] {
+.lang-switch summary:hover,
+.lang-switch details[open] summary {
+  border-color: var(--rouille);
+  color: var(--rouille);
+}
+
+.lang-chevron {
+  transition: transform 0.15s;
+}
+
+.lang-switch details[open] .lang-chevron {
+  transform: rotate(180deg);
+}
+
+.lang-switch ul {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 10rem;
+  padding: 0.35rem;
+  list-style: none;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px rgba(43, 45, 47, 0.14);
+}
+
+.nav-links .lang-switch ul a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-image: none;
+}
+
+.nav-links .lang-switch ul a:hover {
+  background: var(--pierre);
+}
+
+.nav-links .lang-switch ul a[aria-current="page"] {
   color: var(--rouille);
   font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.3em;
 }
 
 @media (max-width: 1200px) {
-  .nav-links .lang-switch {
+  .lang-switch {
     margin: 0;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid var(--pierre);
   }
 
-  .nav-links .lang-switch a {
-    padding: 0.25rem 1rem 0.25rem 0;
+  .lang-switch ul {
+    position: static;
+    min-width: 0;
+    margin-top: 0.5rem;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: none;
+  }
+
+  .nav-links .lang-switch ul a {
+    padding: 0.5rem 0.75rem;
     border-bottom: 0;
   }
 }
