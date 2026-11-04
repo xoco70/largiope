@@ -9,7 +9,7 @@
   <!-- SEO de base -->
   <meta name="description"
     content="L'argiope, Domaine viticole à Caudiès-de-Fenouillèdes. Découvrez nos vins libres et réservez votre visite œnotouristique.">
-  <link rel="canonical" href="https://largiope.fr">
+  <link rel="canonical" href="https://largiope.fr/">
   <link rel="alternate" hreflang="fr" href="https://largiope.fr/">
   <link rel="alternate" hreflang="en" href="https://largiope.fr/en/">
   <link rel="alternate" hreflang="es" href="https://largiope.fr/es/">
@@ -26,7 +26,7 @@
   <meta property="og:title" content="Domaine L'argiope – Domaine viticole dans les Fénouillèdes">
   <meta property="og:description"
     content="Domaine viticole à Caudiès-de-Fenouillèdes. Vins libres et visites sur rendez-vous.">
-  <meta property="og:url" content="https://largiope.fr">
+  <meta property="og:url" content="https://largiope.fr/">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:image" content="https://largiope.fr/logo.webp">
 
@@ -41,34 +41,151 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Winery", "LocalBusiness"],
-    "name": "L'argiope",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Caudiès-de-Fenouillèdes",
-      "postalCode": "66220",
-      "addressRegion": "Pyrénées-Orientales",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "42.7856902",
-      "longitude": "2.4691413"
-    },
-    "telephone": "+33629387357",
-    "email": "contact@largiope.fr",
-    "url": "https://largiope.fr",
-    "priceRange": "€€",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": [
-      "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
-    ],
-    "description": "Domaine viticole créé en 2023 par Paul Bezert. 6,5 ha de vignes préservées au cœur des Fenouillèdes. Balade guidée immersive dans un environnement sauvage, loin des sentiers battus."
+    "@graph": [
+      {
+        "@type": [
+          "Winery",
+          "LocalBusiness"
+        ],
+        "@id": "https://largiope.fr/#domaine",
+        "name": "L'argiope",
+        "alternateName": "Domaine L'argiope",
+        "description": "Domaine viticole créé en 2023 par Paul Bezert. 6,5 ha de vignes préservées au cœur des Fenouillèdes. Balade guidée immersive dans un environnement sauvage, loin des sentiers battus.",
+        "url": "https://largiope.fr/",
+        "logo": "https://largiope.fr/logo.webp",
+        "image": [
+          "https://largiope.fr/images/argiope1.webp",
+          "https://largiope.fr/images/argiope2.webp"
+        ],
+        "foundingDate": "2023",
+        "founder": {
+          "@id": "https://largiope.fr/#paul-bezert"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Caudiès-de-Fenouillèdes",
+          "postalCode": "66220",
+          "addressRegion": "Pyrénées-Orientales",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "42.7856902",
+          "longitude": "2.4691413"
+        },
+        "hasMap": "https://www.google.com/maps?q=42.7856902,2.4691413",
+        "telephone": "+33629387357",
+        "email": "contact@largiope.fr",
+        "priceRange": "€€",
+        "sameAs": [
+          "https://www.instagram.com/largiope/",
+          "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://largiope.fr/#paul-bezert",
+        "name": "Paul Bezert",
+        "jobTitle": "Vigneron",
+        "worksFor": {
+          "@id": "https://largiope.fr/#domaine"
+        }
+      },
+      {
+        "@type": "TouristTrip",
+        "@id": "https://largiope.fr/#balade",
+        "name": "Balade dans les vignes et dégustation au Domaine L'argiope",
+        "description": "Une balade guidée dans les vignes, loin des sentiers battus, pour découvrir le travail du vigneron au fil des saisons, suivie d'une dégustation des vins du domaine.",
+        "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+        "provider": {
+          "@id": "https://largiope.fr/#domaine"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+          "price": "20",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://largiope.fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Combien de temps dure la visite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Environ 2 heures : une visite guidée des vignes, puis une dégustation commentée au domaine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que comprend la balade et dégustation ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Une visite guidée des vignes, une dégustation commentée de 4 à 6 cuvées du domaine et une petite assiette de tapas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien coûte la visite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "20 € par adulte, gratuit pour les enfants. Dégustation et assiette de tapas comprises."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Faut-il réserver ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, le domaine se visite uniquement sur rendez-vous, au moins 2 jours à l'avance. Réservez en ligne avec le calendrier de cette page ou sur Viny'aqui."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de personnes par groupe ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De 2 à 10 personnes, pour une visite à taille humaine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "En quelles langues se fait la visite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En français, en anglais, en espagnol et en catalan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on annuler sa réservation ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, l'annulation est gratuite jusqu'à 1 jour avant la visite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où se trouve le domaine ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "À Caudiès-de-Fenouillèdes (66220), dans les Pyrénées-Orientales, au cœur des Fenouillèdes, au nord-ouest de la vallée de l'Agly. Les vignes sont à 400 m d'altitude."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels vins produit le domaine ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Des vins libres de vieilles vignes, en agriculture biologique, vinifiés en grappes entières, sans soufre pendant la vinification (10 mg/l à la mise en bouteille). Des rouges, un blanc et un rosé, à base de carignan, syrah, lledoner pelut et macabeu."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -99,6 +216,7 @@
         <li><a href="#argiope">Pourquoi l'argiope</a></li>
         <li><a href="#cuvees">Cuvées</a></li>
         <li><a href="#visite">Visite</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="lang-switch"><details><summary aria-label="Langue"><svg class="lang-globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>FR</span><svg class="lang-chevron" viewBox="0 0 12 8" width="10" height="7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></summary><ul><li><a href="/" hreflang="fr" lang="fr" aria-current="page">Français</a></li><li><a href="/en/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/ca/" hreflang="ca" lang="ca">Català</a></li></ul></details></li>
         <li class="nav-cta"><a href="#visite" data-no-spy>Réserver</a></li>
@@ -288,6 +406,50 @@
       </div>
     </section>
 
+    <section class="section faq-section" id="faq">
+      <div class="section-inner">
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Combien de temps dure la visite ?</summary>
+            <p>Environ 2 heures : une visite guidée des vignes, puis une dégustation commentée au domaine.</p>
+          </details>
+          <details>
+            <summary>Que comprend la balade et dégustation ?</summary>
+            <p>Une visite guidée des vignes, une dégustation commentée de 4 à 6 cuvées du domaine et une petite assiette de tapas.</p>
+          </details>
+          <details>
+            <summary>Combien coûte la visite ?</summary>
+            <p>20 € par adulte, gratuit pour les enfants. Dégustation et assiette de tapas comprises.</p>
+          </details>
+          <details>
+            <summary>Faut-il réserver ?</summary>
+            <p>Oui, le domaine se visite uniquement sur rendez-vous, au moins 2 jours à l'avance. Réservez en ligne avec le <a href="#visite">calendrier de cette page</a> ou sur <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener">Viny'aqui</a>.</p>
+          </details>
+          <details>
+            <summary>Combien de personnes par groupe ?</summary>
+            <p>De 2 à 10 personnes, pour une visite à taille humaine.</p>
+          </details>
+          <details>
+            <summary>En quelles langues se fait la visite ?</summary>
+            <p>En français, en anglais, en espagnol et en catalan.</p>
+          </details>
+          <details>
+            <summary>Peut-on annuler sa réservation ?</summary>
+            <p>Oui, l'annulation est gratuite jusqu'à 1 jour avant la visite.</p>
+          </details>
+          <details>
+            <summary>Où se trouve le domaine ?</summary>
+            <p>À Caudiès-de-Fenouillèdes (66220), dans les Pyrénées-Orientales, au cœur des Fenouillèdes, au nord-ouest de la vallée de l'Agly. Les vignes sont à 400 m d'altitude.</p>
+          </details>
+          <details>
+            <summary>Quels vins produit le domaine ?</summary>
+            <p>Des vins libres de vieilles vignes, en agriculture biologique, vinifiés en grappes entières, sans soufre pendant la vinification (10 mg/l à la mise en bouteille). Des rouges, un blanc et un rosé, à base de carignan, syrah, lledoner pelut et macabeu.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section is-stone map-section" id="contact">
       <div class="section-inner split">
         <div class="contact-info">
@@ -321,7 +483,10 @@
   <footer>
     <div class="footer-inner">
       <p>© Domaine L'argiope – Tous droits réservés · <button type="button" class="cookie-link" data-cookie-manage>Gérer les cookies</button></p>
-      <a class="footer-top" href="#accueil">Haut de page</a>
+      <div class="footer-actions">
+        <a class="footer-social" href="https://www.instagram.com/largiope/" target="_blank" rel="noopener" aria-label="Le domaine L'argiope sur Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="footer-top" href="#accueil">Haut de page</a>
+      </div>
     </div>
   </footer>
 

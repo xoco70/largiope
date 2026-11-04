@@ -41,34 +41,151 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Winery", "LocalBusiness"],
-    "name": "L'argiope",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Caudiès-de-Fenouillèdes",
-      "postalCode": "66220",
-      "addressRegion": "Pyrénées-Orientales",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "42.7856902",
-      "longitude": "2.4691413"
-    },
-    "telephone": "+33629387357",
-    "email": "contact@largiope.fr",
-    "url": "https://largiope.fr",
-    "priceRange": "€€",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": [
-      "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
-    ],
-    "description": "Bodega fundada en 2023 por Paul Bezert. 6,5 ha de viñedo preservado en el corazón de los Fenouillèdes. Paseo guiado inmersivo en un entorno salvaje, lejos de los caminos trillados."
+    "@graph": [
+      {
+        "@type": [
+          "Winery",
+          "LocalBusiness"
+        ],
+        "@id": "https://largiope.fr/#domaine",
+        "name": "L'argiope",
+        "alternateName": "Domaine L'argiope",
+        "description": "Bodega fundada en 2023 por Paul Bezert. 6,5 ha de viñedo preservado en el corazón de los Fenouillèdes. Paseo guiado inmersivo en un entorno salvaje, lejos de los caminos trillados.",
+        "url": "https://largiope.fr/",
+        "logo": "https://largiope.fr/logo.webp",
+        "image": [
+          "https://largiope.fr/images/argiope1.webp",
+          "https://largiope.fr/images/argiope2.webp"
+        ],
+        "foundingDate": "2023",
+        "founder": {
+          "@id": "https://largiope.fr/#paul-bezert"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Caudiès-de-Fenouillèdes",
+          "postalCode": "66220",
+          "addressRegion": "Pyrénées-Orientales",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "42.7856902",
+          "longitude": "2.4691413"
+        },
+        "hasMap": "https://www.google.com/maps?q=42.7856902,2.4691413",
+        "telephone": "+33629387357",
+        "email": "contact@largiope.fr",
+        "priceRange": "€€",
+        "sameAs": [
+          "https://www.instagram.com/largiope/",
+          "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://largiope.fr/#paul-bezert",
+        "name": "Paul Bezert",
+        "jobTitle": "Viticultor",
+        "worksFor": {
+          "@id": "https://largiope.fr/#domaine"
+        }
+      },
+      {
+        "@type": "TouristTrip",
+        "@id": "https://largiope.fr/#balade",
+        "name": "Paseo por las viñas y cata en el Domaine L'argiope",
+        "description": "Un paseo guiado por las viñas, lejos de los caminos trillados, para descubrir el trabajo del viticultor a lo largo de las estaciones, seguido de una cata de los vinos de la bodega.",
+        "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+        "provider": {
+          "@id": "https://largiope.fr/#domaine"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+          "price": "20",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://largiope.fr/es/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto dura la visita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unas 2 horas: una visita guiada por las viñas y, después, una cata comentada en la bodega."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué incluye el paseo y cata?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una visita guiada por las viñas, una cata comentada de 4 a 6 vinos de la bodega y un pequeño plato de tapas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta la visita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "20 € por adulto, gratis para los niños. Cata y plato de tapas incluidos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay que reservar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, la bodega solo se visita con cita previa, con al menos 2 días de antelación. Reserve en línea con el calendario de esta página o en Viny'aqui."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuántas personas por grupo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De 2 a 10 personas, para una visita en grupo reducido."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿En qué idiomas se hace la visita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En francés, inglés, español y catalán."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Se puede cancelar la reserva?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, la cancelación es gratuita hasta 1 día antes de la visita."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Dónde está la bodega?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En Caudiès-de-Fenouillèdes (66220), en los Pirineos Orientales, Francia, en el corazón del Fenouillèdes, al noroeste del valle del Agly. Las viñas están a 400 m de altitud."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué vinos elabora la bodega?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vinos naturales de viñas viejas, en agricultura ecológica, vinificados con racimo entero, sin azufre durante la vinificación (10 mg/l en el embotellado). Tintos, un blanco y un rosado, a base de cariñena, syrah, garnacha peluda y macabeo."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -98,6 +215,7 @@
         <li><a href="#argiope">Por qué la argiope</a></li>
         <li><a href="#cuvees">Vinos</a></li>
         <li><a href="#visite">Visita</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contacto</a></li>
         <li class="lang-switch"><details><summary aria-label="Idioma"><svg class="lang-globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>ES</span><svg class="lang-chevron" viewBox="0 0 12 8" width="10" height="7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></summary><ul><li><a href="/" hreflang="fr" lang="fr">Français</a></li><li><a href="/en/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es" aria-current="page">Español</a></li><li><a href="/ca/" hreflang="ca" lang="ca">Català</a></li></ul></details></li>
         <li class="nav-cta"><a href="#visite" data-no-spy>Reservar</a></li>
@@ -270,6 +388,50 @@
       </div>
     </section>
 
+    <section class="section faq-section" id="faq">
+      <div class="section-inner">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>¿Cuánto dura la visita?</summary>
+            <p>Unas 2 horas: una visita guiada por las viñas y, después, una cata comentada en la bodega.</p>
+          </details>
+          <details>
+            <summary>¿Qué incluye el paseo y cata?</summary>
+            <p>Una visita guiada por las viñas, una cata comentada de 4 a 6 vinos de la bodega y un pequeño plato de tapas.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta la visita?</summary>
+            <p>20 € por adulto, gratis para los niños. Cata y plato de tapas incluidos.</p>
+          </details>
+          <details>
+            <summary>¿Hay que reservar?</summary>
+            <p>Sí, la bodega solo se visita con cita previa, con al menos 2 días de antelación. Reserve en línea con el <a href="#visite">calendario de esta página</a> o en <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener">Viny'aqui</a>.</p>
+          </details>
+          <details>
+            <summary>¿Cuántas personas por grupo?</summary>
+            <p>De 2 a 10 personas, para una visita en grupo reducido.</p>
+          </details>
+          <details>
+            <summary>¿En qué idiomas se hace la visita?</summary>
+            <p>En francés, inglés, español y catalán.</p>
+          </details>
+          <details>
+            <summary>¿Se puede cancelar la reserva?</summary>
+            <p>Sí, la cancelación es gratuita hasta 1 día antes de la visita.</p>
+          </details>
+          <details>
+            <summary>¿Dónde está la bodega?</summary>
+            <p>En Caudiès-de-Fenouillèdes (66220), en los Pirineos Orientales, Francia, en el corazón del Fenouillèdes, al noroeste del valle del Agly. Las viñas están a 400 m de altitud.</p>
+          </details>
+          <details>
+            <summary>¿Qué vinos elabora la bodega?</summary>
+            <p>Vinos naturales de viñas viejas, en agricultura ecológica, vinificados con racimo entero, sin azufre durante la vinificación (10 mg/l en el embotellado). Tintos, un blanco y un rosado, a base de cariñena, syrah, garnacha peluda y macabeo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section is-stone map-section" id="contact">
       <div class="section-inner split">
         <div class="contact-info">
@@ -303,7 +465,10 @@
   <footer>
     <div class="footer-inner">
       <p>© Domaine L'argiope – Todos los derechos reservados · <button type="button" class="cookie-link" data-cookie-manage>Gestionar cookies</button></p>
-      <a class="footer-top" href="#accueil">Volver arriba</a>
+      <div class="footer-actions">
+        <a class="footer-social" href="https://www.instagram.com/largiope/" target="_blank" rel="noopener" aria-label="El Domaine L'argiope en Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="footer-top" href="#accueil">Volver arriba</a>
+      </div>
     </div>
   </footer>
 

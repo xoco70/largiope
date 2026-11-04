@@ -41,34 +41,151 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Winery", "LocalBusiness"],
-    "name": "L'argiope",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Caudiès-de-Fenouillèdes",
-      "postalCode": "66220",
-      "addressRegion": "Pyrénées-Orientales",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "42.7856902",
-      "longitude": "2.4691413"
-    },
-    "telephone": "+33629387357",
-    "email": "contact@largiope.fr",
-    "url": "https://largiope.fr",
-    "priceRange": "€€",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": [
-      "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
-    ],
-    "description": "Winery founded in 2023 by Paul Bezert. 6.5 ha of unspoiled vines in the heart of the Fenouillèdes. Immersive guided walk in a wild setting, off the beaten track."
+    "@graph": [
+      {
+        "@type": [
+          "Winery",
+          "LocalBusiness"
+        ],
+        "@id": "https://largiope.fr/#domaine",
+        "name": "L'argiope",
+        "alternateName": "Domaine L'argiope",
+        "description": "Winery founded in 2023 by Paul Bezert. 6.5 ha of unspoiled vines in the heart of the Fenouillèdes. Immersive guided walk in a wild setting, off the beaten track.",
+        "url": "https://largiope.fr/",
+        "logo": "https://largiope.fr/logo.webp",
+        "image": [
+          "https://largiope.fr/images/argiope1.webp",
+          "https://largiope.fr/images/argiope2.webp"
+        ],
+        "foundingDate": "2023",
+        "founder": {
+          "@id": "https://largiope.fr/#paul-bezert"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Caudiès-de-Fenouillèdes",
+          "postalCode": "66220",
+          "addressRegion": "Pyrénées-Orientales",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "42.7856902",
+          "longitude": "2.4691413"
+        },
+        "hasMap": "https://www.google.com/maps?q=42.7856902,2.4691413",
+        "telephone": "+33629387357",
+        "email": "contact@largiope.fr",
+        "priceRange": "€€",
+        "sameAs": [
+          "https://www.instagram.com/largiope/",
+          "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://largiope.fr/#paul-bezert",
+        "name": "Paul Bezert",
+        "jobTitle": "Winemaker",
+        "worksFor": {
+          "@id": "https://largiope.fr/#domaine"
+        }
+      },
+      {
+        "@type": "TouristTrip",
+        "@id": "https://largiope.fr/#balade",
+        "name": "Vineyard walk and tasting at Domaine L'argiope",
+        "description": "A guided walk through the vines, off the beaten track, to discover the winemaker's work through the seasons, followed by a tasting of the estate's wines.",
+        "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+        "provider": {
+          "@id": "https://largiope.fr/#domaine"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+          "price": "20",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://largiope.fr/en/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does the visit last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "About 2 hours: a guided walk through the vines, followed by a commented tasting at the estate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the walk and tasting include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A guided tour of the vineyard, a commented tasting of 4 to 6 of the estate's wines and a small plate of tapas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does the visit cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "€20 per adult, free for children. Tasting and plate of tapas included."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to book?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the estate can only be visited by appointment, at least 2 days in advance. Book online with the calendar on this page or on Viny'aqui."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many people per group?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "From 2 to 10 people, for a small-group visit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which languages is the visit available in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "French, English, Spanish and Catalan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I cancel my booking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, cancellation is free up to 1 day before the visit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is the estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Caudiès-de-Fenouillèdes (66220), in the Pyrénées-Orientales, France, in the heart of the Fenouillèdes, north-west of the Agly valley. The vines grow at 400 m altitude."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What wines does the estate make?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raw old-vine wines, farmed organically, vinified as whole bunches, with no sulphur during winemaking (10 mg/l at bottling). Reds, a white and a rosé, made from carignan, syrah, lledoner pelut and macabeu."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -98,6 +215,7 @@
         <li><a href="#argiope">Why the argiope</a></li>
         <li><a href="#cuvees">Wines</a></li>
         <li><a href="#visite">Visit</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="lang-switch"><details><summary aria-label="Language"><svg class="lang-globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>EN</span><svg class="lang-chevron" viewBox="0 0 12 8" width="10" height="7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></summary><ul><li><a href="/" hreflang="fr" lang="fr">Français</a></li><li><a href="/en/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/ca/" hreflang="ca" lang="ca">Català</a></li></ul></details></li>
         <li class="nav-cta"><a href="#visite" data-no-spy>Book</a></li>
@@ -270,6 +388,50 @@
       </div>
     </section>
 
+    <section class="section faq-section" id="faq">
+      <div class="section-inner">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details>
+            <summary>How long does the visit last?</summary>
+            <p>About 2 hours: a guided walk through the vines, followed by a commented tasting at the estate.</p>
+          </details>
+          <details>
+            <summary>What does the walk and tasting include?</summary>
+            <p>A guided tour of the vineyard, a commented tasting of 4 to 6 of the estate's wines and a small plate of tapas.</p>
+          </details>
+          <details>
+            <summary>How much does the visit cost?</summary>
+            <p>€20 per adult, free for children. Tasting and plate of tapas included.</p>
+          </details>
+          <details>
+            <summary>Do I need to book?</summary>
+            <p>Yes, the estate can only be visited by appointment, at least 2 days in advance. Book online with the <a href="#visite">calendar on this page</a> or on <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener">Viny'aqui</a>.</p>
+          </details>
+          <details>
+            <summary>How many people per group?</summary>
+            <p>From 2 to 10 people, for a small-group visit.</p>
+          </details>
+          <details>
+            <summary>Which languages is the visit available in?</summary>
+            <p>French, English, Spanish and Catalan.</p>
+          </details>
+          <details>
+            <summary>Can I cancel my booking?</summary>
+            <p>Yes, cancellation is free up to 1 day before the visit.</p>
+          </details>
+          <details>
+            <summary>Where is the estate?</summary>
+            <p>In Caudiès-de-Fenouillèdes (66220), in the Pyrénées-Orientales, France, in the heart of the Fenouillèdes, north-west of the Agly valley. The vines grow at 400 m altitude.</p>
+          </details>
+          <details>
+            <summary>What wines does the estate make?</summary>
+            <p>Raw old-vine wines, farmed organically, vinified as whole bunches, with no sulphur during winemaking (10 mg/l at bottling). Reds, a white and a rosé, made from carignan, syrah, lledoner pelut and macabeu.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section is-stone map-section" id="contact">
       <div class="section-inner split">
         <div class="contact-info">
@@ -303,7 +465,10 @@
   <footer>
     <div class="footer-inner">
       <p>© Domaine L'argiope – All rights reserved · <button type="button" class="cookie-link" data-cookie-manage>Manage cookies</button></p>
-      <a class="footer-top" href="#accueil">Back to top</a>
+      <div class="footer-actions">
+        <a class="footer-social" href="https://www.instagram.com/largiope/" target="_blank" rel="noopener" aria-label="Domaine L'argiope on Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="footer-top" href="#accueil">Back to top</a>
+      </div>
     </div>
   </footer>
 

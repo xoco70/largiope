@@ -41,34 +41,151 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Winery", "LocalBusiness"],
-    "name": "L'argiope",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Caudiès-de-Fenouillèdes",
-      "postalCode": "66220",
-      "addressRegion": "Pyrénées-Orientales",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "42.7856902",
-      "longitude": "2.4691413"
-    },
-    "telephone": "+33629387357",
-    "email": "contact@largiope.fr",
-    "url": "https://largiope.fr",
-    "priceRange": "€€",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": [
-      "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
-    ],
-    "description": "Celler fundat el 2023 per Paul Bezert. 6,5 ha de vinyes preservades al cor de la Fenolleda. Passejada guiada immersiva en un entorn salvatge, lluny dels camins trillats."
+    "@graph": [
+      {
+        "@type": [
+          "Winery",
+          "LocalBusiness"
+        ],
+        "@id": "https://largiope.fr/#domaine",
+        "name": "L'argiope",
+        "alternateName": "Domaine L'argiope",
+        "description": "Celler fundat el 2023 per Paul Bezert. 6,5 ha de vinyes preservades al cor de la Fenolleda. Passejada guiada immersiva en un entorn salvatge, lluny dels camins trillats.",
+        "url": "https://largiope.fr/",
+        "logo": "https://largiope.fr/logo.webp",
+        "image": [
+          "https://largiope.fr/images/argiope1.webp",
+          "https://largiope.fr/images/argiope2.webp"
+        ],
+        "foundingDate": "2023",
+        "founder": {
+          "@id": "https://largiope.fr/#paul-bezert"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Caudiès-de-Fenouillèdes",
+          "postalCode": "66220",
+          "addressRegion": "Pyrénées-Orientales",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "42.7856902",
+          "longitude": "2.4691413"
+        },
+        "hasMap": "https://www.google.com/maps?q=42.7856902,2.4691413",
+        "telephone": "+33629387357",
+        "email": "contact@largiope.fr",
+        "priceRange": "€€",
+        "sameAs": [
+          "https://www.instagram.com/largiope/",
+          "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://largiope.fr/#paul-bezert",
+        "name": "Paul Bezert",
+        "jobTitle": "Vinyater",
+        "worksFor": {
+          "@id": "https://largiope.fr/#domaine"
+        }
+      },
+      {
+        "@type": "TouristTrip",
+        "@id": "https://largiope.fr/#balade",
+        "name": "Passejada per les vinyes i tast al Domaine L'argiope",
+        "description": "Una passejada guiada per les vinyes, lluny dels camins trillats, per descobrir la feina del vinyater al llarg de les estacions, seguida d'un tast dels vins del celler.",
+        "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+        "provider": {
+          "@id": "https://largiope.fr/#domaine"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope",
+          "price": "20",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://largiope.fr/ca/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quant dura la visita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unes 2 hores: una visita guiada per les vinyes i, després, un tast comentat al celler."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Què inclou la passejada i tast?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una visita guiada per les vinyes, un tast comentat de 4 a 6 vins del celler i un platet de tapes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quant costa la visita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "20 € per adult, gratuït per als infants. Tast i platet de tapes inclosos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Cal reservar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, el celler només es visita amb cita prèvia, com a mínim amb 2 dies d'antelació. Reserva en línia amb el calendari d'aquesta pàgina o a Viny'aqui."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quantes persones per grup?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De 2 a 10 persones, per a una visita en grup reduït."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "En quines llengües es fa la visita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En francès, anglès, castellà i català."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Es pot cancel·lar la reserva?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, la cancel·lació és gratuïta fins a 1 dia abans de la visita."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "On és el celler?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Caudiès-de-Fenouillèdes (66220), als Pirineus Orientals, França, al cor de la Fenolleda, al nord-oest de la vall de l'Aglí. Les vinyes són a 400 m d'altitud."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quins vins elabora el celler?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vins naturals de vinyes velles, en agricultura ecològica, vinificats amb raïm sencer, sense sofre durant la vinificació (10 mg/l a l'embotellament). Negres, un blanc i un rosat, a base de carinyena, syrah, lledoner pelut i macabeu."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -98,6 +215,7 @@
         <li><a href="#argiope">Per què l'argiope</a></li>
         <li><a href="#cuvees">Vins</a></li>
         <li><a href="#visite">Visita</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contacte</a></li>
         <li class="lang-switch"><details><summary aria-label="Idioma"><svg class="lang-globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>CA</span><svg class="lang-chevron" viewBox="0 0 12 8" width="10" height="7" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></summary><ul><li><a href="/" hreflang="fr" lang="fr">Français</a></li><li><a href="/en/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/ca/" hreflang="ca" lang="ca" aria-current="page">Català</a></li></ul></details></li>
         <li class="nav-cta"><a href="#visite" data-no-spy>Reserva</a></li>
@@ -270,6 +388,50 @@
       </div>
     </section>
 
+    <section class="section faq-section" id="faq">
+      <div class="section-inner">
+        <h2>Preguntes freqüents</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Quant dura la visita?</summary>
+            <p>Unes 2 hores: una visita guiada per les vinyes i, després, un tast comentat al celler.</p>
+          </details>
+          <details>
+            <summary>Què inclou la passejada i tast?</summary>
+            <p>Una visita guiada per les vinyes, un tast comentat de 4 a 6 vins del celler i un platet de tapes.</p>
+          </details>
+          <details>
+            <summary>Quant costa la visita?</summary>
+            <p>20 € per adult, gratuït per als infants. Tast i platet de tapes inclosos.</p>
+          </details>
+          <details>
+            <summary>Cal reservar?</summary>
+            <p>Sí, el celler només es visita amb cita prèvia, com a mínim amb 2 dies d'antelació. Reserva en línia amb el <a href="#visite">calendari d'aquesta pàgina</a> o a <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener">Viny'aqui</a>.</p>
+          </details>
+          <details>
+            <summary>Quantes persones per grup?</summary>
+            <p>De 2 a 10 persones, per a una visita en grup reduït.</p>
+          </details>
+          <details>
+            <summary>En quines llengües es fa la visita?</summary>
+            <p>En francès, anglès, castellà i català.</p>
+          </details>
+          <details>
+            <summary>Es pot cancel·lar la reserva?</summary>
+            <p>Sí, la cancel·lació és gratuïta fins a 1 dia abans de la visita.</p>
+          </details>
+          <details>
+            <summary>On és el celler?</summary>
+            <p>A Caudiès-de-Fenouillèdes (66220), als Pirineus Orientals, França, al cor de la Fenolleda, al nord-oest de la vall de l'Aglí. Les vinyes són a 400 m d'altitud.</p>
+          </details>
+          <details>
+            <summary>Quins vins elabora el celler?</summary>
+            <p>Vins naturals de vinyes velles, en agricultura ecològica, vinificats amb raïm sencer, sense sofre durant la vinificació (10 mg/l a l'embotellament). Negres, un blanc i un rosat, a base de carinyena, syrah, lledoner pelut i macabeu.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section is-stone map-section" id="contact">
       <div class="section-inner split">
         <div class="contact-info">
@@ -303,7 +465,10 @@
   <footer>
     <div class="footer-inner">
       <p>© Domaine L'argiope – Tots els drets reservats · <button type="button" class="cookie-link" data-cookie-manage>Gestiona les galetes</button></p>
-      <a class="footer-top" href="#accueil">Torna a dalt</a>
+      <div class="footer-actions">
+        <a class="footer-social" href="https://www.instagram.com/largiope/" target="_blank" rel="noopener" aria-label="El Domaine L'argiope a Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="footer-top" href="#accueil">Torna a dalt</a>
+      </div>
     </div>
   </footer>
 
