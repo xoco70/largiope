@@ -151,6 +151,126 @@
       text-align: justify;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .photo-hero {
+      margin: 0 0 2.5rem;
+    }
+
+    .photo-hero img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 70%;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .argiope-story img {
+      float: right;
+      width: 150px;
+      margin: 0 0 1rem 1.25rem;
+    }
+
+    .argiope-story::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .cuvee-feature {
+      display: grid;
+      grid-template-columns: 40% 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      background: #faf8f6;
+      padding: 1.25rem;
+      border-radius: 8px;
+    }
+
+    .cuvee-feature img {
+      border-radius: 6px;
+    }
+
+    .cuvee-feature h3 {
+      margin-top: 0;
+      margin-bottom: 0.2rem;
+    }
+
+    .cuvee-feature p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cuvee-meta {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .cuvee-list {
+      list-style: none;
+    }
+
+    .cuvee-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0e6dc;
+    }
+
+    .cuvee-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .cuvee-color {
+      min-width: 4.5rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .cuvee-color.rouge {
+      background: #7b1e2b;
+      color: #fff;
+    }
+
+    .cuvee-color.blanc {
+      background: #f3e7b8;
+      color: #5c3317;
+    }
+
+    .cuvee-color.rose {
+      background: #f4c7c3;
+      color: #5c3317;
+    }
+
     .contact-info {
       background: #faf8f6;
       padding: 1.5rem;
@@ -255,6 +375,10 @@
 
       main {
         padding: 1.5rem 1.2rem;
+      }
+
+      .cuvee-feature {
+        grid-template-columns: 1fr;
       }
 
     }
@@ -363,6 +487,14 @@
     #vinyaqui-widget .vw-widget .vw-backlink-wrap {
       text-align: center;
     }
+
+    .vinyaqui-backlink {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      text-align: center;
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -379,28 +511,94 @@
     </header>
 
     <main>
+      <figure class="photo-hero">
+        <img src="images/argiope1.webp" width="1000" height="1250"
+          alt="Paul Bezert taillant ses vieilles vignes, un troupeau de moutons et les montagnes des Fenouillèdes en arrière-plan">
+        <figcaption>Taille d'hiver, avec les moutons qui entretiennent les rangs.</figcaption>
+      </figure>
+
       <section>
         <h2>Notre histoire</h2>
         <p>
-          Ce domaine, créé en 2023 par Paul Bezert, possède 6,5 hectares de vignes dans un cadre préservé et sauvage,
-          caractéristique des Fenouillèdes.
-          Éloigné des touristes, il propose une visite guidée pour s'immerger dans l'univers du vigneron et comprendre
-          l'évolution de son travail au fil des saisons et des différents cépages.
+          Paul Bezert s'est installé en 2023 à Caudiès-de-Fenouillèdes, au nord-ouest de la vallée de l'Agly.
+          Le Fenouillèdes, c'est l'Occitanie du pays catalan : on y parlait occitan quand le reste du Roussillon
+          parlait catalan. On dit aussi qu'il y pleut un peu plus qu'ailleurs… c'est faux.
         </p>
         <p>
-          Notre philosophie : des vendanges manuelles, des vinifications douces et
-          un élevage soigné pour révéler toute la complexité de nos cuvées. Chaque
-          millésime raconte l'histoire d'une année, d'un terroir et d'un savoir-faire.
+          Formé auprès de Loïc Roure au Domaine du Possible, Paul travaille 6,5 hectares de vignes à 400 m d'altitude,
+          sur des marnes schisteuses, dans un cadre préservé et sauvage. La cave est installée à Saint-Martin.
         </p>
-        <h2>Les cépages</h2>
-          <p>
-            Macabeu, lledoner pelut, carignan, syrah
-          </p>
-          <h2>Nos engagements</h2>
+        <p>
+          Loin des circuits touristiques, le domaine propose une
+          <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
+            target="_blank" rel="noopener">balade dans les vignes suivie d'une dégustation</a>, à réserver sur
+          Viny'aqui, pour découvrir le travail du vigneron au fil des saisons et des cépages.
+        </p>
+      </section>
+
+      <div class="photo-grid">
+        <img src="images/argiope2.webp" width="1000" height="1000" loading="lazy"
+          alt="Rangs de vigne en été au domaine L'argiope, sous le soleil des Fenouillèdes">
+        <img src="images/argiope-biodiv.webp" width="1000" height="1000" loading="lazy"
+          alt="Nid d'oiseau avec ses œufs, caché dans le feuillage d'une vigne du domaine">
+      </div>
+
+      <section>
+        <h2>Nos engagements</h2>
+        <p>
+          Les vignes sont conduites en agriculture biologique, en laissant toute sa place à la vie sauvage :
+          oiseaux, insectes et moutons partagent les parcelles. Au chai, tout est vinifié en grappes entières,
+          sans soufre pendant la vinification : seulement 10 mg/l à la mise en bouteille.
+        </p>
+      </section>
+
+      <section class="argiope-story">
+        <h2>Pourquoi l'argiope ?</h2>
+        <img src="logo.webp" width="400" height="400" loading="lazy"
+          alt="Illustration d'une argiope frelon sur sa toile, emblème du domaine">
+        <p>
+          L'argiope frelon (<em>Argiope bruennichi</em>) est une araignée rayée de jaune, de noir et de blanc,
+          que l'on croise l'été dans les herbes hautes, entre les rangs de vigne. Malgré ses airs de guêpe,
+          elle est totalement inoffensive pour l'homme.
+        </p>
+        <p>
+          Sa signature : un ruban de soie en zigzag tissé au centre de sa toile, le stabilimentum. On le croit
+          utile pour attirer les insectes, ou pour éviter que les oiseaux ne foncent dans la toile. Son nom vient
+          d'Argiope, une nymphe de la mythologie grecque.
+        </p>
+        <p>
+          Elle ne s'installe que là où l'herbe pousse et où les insectes abondent : la voir dans les vignes, c'est
+          le signe d'un sol vivant. C'est elle qui a donné son nom au domaine.
+        </p>
+      </section>
+
+      <section>
+        <h2>Nos cuvées</h2>
+        <div class="cuvee-feature">
+          <img src="images/argiope-bouteille.webp" width="1000" height="1000" loading="lazy"
+            alt="Bouteille de la cuvée À brûle pourpoint du domaine L'argiope">
+          <div>
+            <h3>À brûle pourpoint</h3>
+            <p class="cuvee-meta">Rouge · Millésime 2023 · 12 % vol.</p>
             <p>
-              Agriculture biologique certifiée / Vinification naturelle /
-              Gestion durable de la vigne
+              La première cuvée du domaine : carignan de vieilles vignes et syrah, pour un rouge léger et
+              expressif, aux arômes de fruits rouges mûrs et d'épices, aux tanins soyeux.
             </p>
+            <p>
+              Servir autour de 16 °C, idéalement carafé une demi-heure avant. Parfait avec un gigot d'agneau
+              aux herbes ou un magret de canard.
+            </p>
+          </div>
+        </div>
+
+        <h3>La gamme</h3>
+        <ul class="cuvee-list">
+          <li><span class="cuvee-color rouge">Rouge</span> Carignan &amp; syrah</li>
+          <li><span class="cuvee-color rouge">Rouge</span> Syrah &amp; macabeu</li>
+          <li><span class="cuvee-color rouge">Rouge</span> Lledoner pelut &amp; carignan</li>
+          <li><span class="cuvee-color blanc">Blanc</span> 100 % macabeu</li>
+          <li><span class="cuvee-color rose">Rosé</span> 100 % syrah</li>
+        </ul>
       </section>
 
       <section>
@@ -425,7 +623,7 @@
 
       <!-- Widget de réservation Vinyaqui -->
 <div id="vinyaqui-widget"></div>
-<a class="vinyaqui-backlink" href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;margin-top:12px;font-size:13px;color:#6b7280;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">Réservez cette expérience sur Viny'aqui</a>
+<a class="vinyaqui-backlink" href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener">Balade et dégustation au Domaine L'argiope : voir l'expérience sur Viny'aqui</a>
 <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css?v=1.4">
 <script
   src="https://vinyaqui.com/widget/booking-widget.js?v=1.4"
