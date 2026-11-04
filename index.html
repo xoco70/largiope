@@ -62,93 +62,92 @@
   }
   </script>
 
+  <link rel="preload" href="fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
+
   <style>
+    /* Polices auto-hébergées (SIL Open Font License) : aucun appel à Google Fonts avant consentement */
+    @font-face {
+      font-family: 'Alegreya';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url(fonts/alegreya.woff2) format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Alegreya';
+      font-style: italic;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url(fonts/alegreya-italic.woff2) format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Alegreya Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fonts/alegreya-sans-400.woff2) format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Alegreya Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fonts/alegreya-sans-500.woff2) format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Alegreya Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fonts/alegreya-sans-700.woff2) format('woff2');
+    }
+
+    /* Palette tirée du logo : jaune et orange de l'argiope, noir schiste, rouge carignan */
+    :root {
+      --schiste: #2b2d2f;
+      --schiste-soft: #55595c;
+      --pierre: #eef0ee;
+      --paper: #ffffff;
+      --argiope: #f5b800;
+      --rouille: #b4501a;
+      --rouille-dark: #8a3c12;
+      --carignan: #7b1e2b;
+      --line: #d9dcd8;
+      --serif: 'Alegreya', Georgia, serif;
+      --sans: 'Alegreya Sans', 'Helvetica Neue', Arial, sans-serif;
+      --nav-h: 4.25rem;
+      --gutter: clamp(1rem, 4vw, 3rem);
+      --zigzag: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath d='M0 5 L3 1 L6 5 L9 1 L12 5' fill='none' stroke='%23b4501a' stroke-width='1.6'/%3E%3C/svg%3E");
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-h);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
     body {
-      font-family: 'Georgia', serif;
-      background: linear-gradient(135deg, #f5f7fa 0%, #e8eef3 100%);
-      color: #2c3e50;
+      font-family: var(--serif);
+      font-size: 1.15rem;
       line-height: 1.7;
-      min-height: 100vh;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 2rem 2rem;
-      background: linear-gradient(to bottom, #ffffff, #fafbfc);
-      border-bottom: 3px solid #8b4513;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      color: #5c3317;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    header .subtitle {
-      color: #7f8c8d;
-      font-size: 1.1rem;
-      font-style: italic;
-      text-align: center;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .logo-small {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      border-radius: 50%;
-    }
-
-
-    main {
-      padding: 2.5rem 2rem;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-    }
-
-    h2 {
-      color: #5c3317;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #e8d5c4;
-    }
-
-    h3 {
-      color: #7d5a3b;
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
-      margin-top: 1.5rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      text-align: justify;
+      background: var(--paper);
+      color: var(--schiste);
+      -webkit-font-smoothing: antialiased;
     }
 
     img {
@@ -157,236 +156,700 @@
       display: block;
     }
 
-    .photo-hero {
-      margin: 0 0 2.5rem;
+    a {
+      color: var(--rouille);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
     }
 
-    .photo-hero img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      object-position: center 70%;
-      border-radius: 8px;
+    a:hover {
+      color: var(--rouille-dark);
     }
 
-    figcaption {
-      margin-top: 0.5rem;
-      color: #7f8c8d;
-      font-size: 0.9rem;
-      font-style: italic;
-      text-align: center;
+    :focus-visible {
+      outline: 3px solid var(--argiope);
+      outline-offset: 3px;
     }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 2.5rem;
+    h2 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
     }
 
-    .photo-grid img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 8px;
+    h3 {
+      font-size: 1.45rem;
+      line-height: 1.25;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
 
-    .argiope-story img {
-      float: right;
-      width: 150px;
-      margin: 0 0 1rem 1.25rem;
+    p {
+      margin-bottom: 1.1rem;
     }
 
-    .argiope-story::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-
-    .cuvee-feature {
-      display: grid;
-      grid-template-columns: 40% 1fr;
-      gap: 1.5rem;
-      align-items: center;
-      background: #faf8f6;
-      padding: 1.25rem;
-      border-radius: 8px;
-    }
-
-    .cuvee-feature img {
-      border-radius: 6px;
-    }
-
-    .cuvee-feature h3 {
-      margin-top: 0;
-      margin-bottom: 0.2rem;
-    }
-
-    .cuvee-feature p:last-child {
+    p:last-child {
       margin-bottom: 0;
     }
 
-    .cuvee-meta {
-      color: #7f8c8d;
-      font-size: 0.9rem;
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 200;
+      padding: 0.5rem 1rem;
+      background: var(--argiope);
+      color: var(--schiste);
+      font-family: var(--sans);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ---------- Menu ---------- */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      height: var(--nav-h);
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--schiste);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.35rem;
+      white-space: nowrap;
+    }
+
+    .brand:hover {
+      color: var(--schiste);
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+      font-family: var(--sans);
+      font-size: 1.05rem;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.55rem 0.75rem 0.7rem;
+      color: var(--schiste);
+      text-decoration: none;
+      background-repeat: repeat-x;
+      background-position: center bottom 0.2rem;
+      background-size: 12px 6px;
+    }
+
+    .nav-links a:hover {
+      color: var(--rouille);
+    }
+
+    /* Le zigzag du stabilimentum marque la section en cours de lecture */
+    .nav-links a[aria-current="true"] {
+      color: var(--rouille);
+      background-image: var(--zigzag);
+    }
+
+    .nav-links .nav-cta a {
+      margin-left: 0.75rem;
+      padding: 0.5rem 1.1rem;
+      background: var(--argiope);
+      color: var(--schiste);
+      font-weight: 700;
+      border-radius: 999px;
+    }
+
+    .nav-links .nav-cta a:hover {
+      background: #ffc61a;
+      color: var(--schiste);
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      font: 700 1rem var(--sans);
+      color: var(--schiste);
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .nav-toggle-bars,
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: currentColor;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .nav-toggle-bars::before {
+      top: -5px;
+    }
+
+    .nav-toggle-bars::after {
+      top: 5px;
+    }
+
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars {
+      background: transparent;
+    }
+
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+
+    @media (max-width: 960px) {
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem var(--gutter) 1.25rem;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 30px rgba(43, 45, 47, 0.12);
+        font-size: 1.2rem;
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--pierre);
+      }
+
+      .nav-links a[aria-current="true"] {
+        background-image: none;
+        font-weight: 700;
+      }
+
+      .nav-links .nav-cta a {
+        margin: 1rem 0 0;
+        text-align: center;
+        border-bottom: 0;
+      }
+    }
+
+    /* ---------- Accueil ---------- */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      min-height: calc(100svh - var(--nav-h));
+      background: var(--pierre);
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
+      max-width: 40rem;
+      margin-left: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7.5vw, 6.25rem);
+      line-height: 0.95;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: 0.42em;
+      font-weight: 500;
       font-style: italic;
+      letter-spacing: 0;
+      margin-bottom: 0.3em;
+      color: var(--schiste-soft);
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.2rem, 2vw, 1.45rem);
+      line-height: 1.5;
+      max-width: 30ch;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 1.5rem;
+      margin-bottom: 2.75rem;
+      font-family: var(--sans);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      background: var(--argiope);
+      color: var(--schiste);
+      font: 700 1.1rem var(--sans);
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #ffc61a;
+      color: var(--schiste);
+    }
+
+    .hero-actions .link {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: start;
+      gap: 0.5rem 2.25rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-family: var(--sans);
+    }
+
+    .facts dt {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .facts dd {
+      color: var(--schiste-soft);
+      font-size: 0.95rem;
+    }
+
+    .hero-photo {
+      position: relative;
+      margin: 0;
+    }
+
+    .hero-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 70%;
+    }
+
+    .hero-photo figcaption {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      max-width: calc(100% - 2rem);
+      padding: 0.35rem 0.8rem;
+      background: rgba(43, 45, 47, 0.78);
+      color: #fff;
+      font: italic 0.95rem/1.4 var(--serif);
+      border-radius: 4px;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .hero-photo {
+        order: -1;
+        height: 58svh;
+        min-height: 320px;
+      }
+
+      .hero-text {
+        margin: 0;
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .facts {
+        grid-template-columns: repeat(2, auto);
+      }
+    }
+
+    /* ---------- Sections ---------- */
+
+    .section {
+      padding: clamp(4rem, 9vw, 7rem) var(--gutter);
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section.is-stone {
+      background: var(--pierre);
+    }
+
+    .section.is-dark {
+      background: var(--schiste);
+      color: #f2f3f1;
+    }
+
+    .section.is-dark a {
+      color: var(--argiope);
+    }
+
+    .prose {
+      max-width: 36rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .split.is-reversed > :first-child {
+      order: 2;
+    }
+
+    @media (max-width: 860px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .split.is-reversed > :first-child {
+        order: 0;
+      }
+    }
+
+    .rounded {
+      border-radius: 6px;
+    }
+
+    /* Histoire */
+    .story-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    /* Engagements */
+    .commitments {
+      list-style: none;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .commitments li {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .commitments strong {
+      font-family: var(--sans);
+      color: var(--argiope);
+      font-weight: 700;
+    }
+
+    @media (max-width: 520px) {
+      .commitments li {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+    }
+
+    .commitments-photo img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .commitments-photo figcaption {
+      margin-top: 0.6rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #c4c8c5;
+    }
+
+    /* Pourquoi l'argiope : bandes de l'abdomen en ouverture et en clôture */
+    .argiope-section {
+      position: relative;
+    }
+
+    .argiope-section::before,
+    .argiope-section::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 18px;
+      background: repeating-linear-gradient(90deg,
+          var(--schiste) 0 22px,
+          var(--argiope) 22px 34px,
+          var(--paper) 34px 40px,
+          var(--argiope) 40px 52px);
+    }
+
+    .argiope-section::before {
+      top: 0;
+    }
+
+    .argiope-section::after {
+      bottom: 0;
+    }
+
+    .argiope-emblem {
+      max-width: 420px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .argiope-section .latin {
+      font-style: italic;
+    }
+
+    /* Cuvées */
+    .cuvee-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: center;
+      margin-bottom: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .cuvee-feature img {
+      width: 100%;
+    }
+
+    .cuvee-meta {
+      font-family: var(--sans);
+      color: var(--carignan);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .cuvee-feature h3 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-style: italic;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .serving {
+      margin-top: 1.25rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--carignan);
+    }
+
+    @media (max-width: 760px) {
+      .cuvee-feature {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .range-heading {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
     }
 
     .cuvee-list {
       list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+      gap: 0 2.5rem;
     }
 
     .cuvee-list li {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid #f0e6dc;
-    }
-
-    .cuvee-list li:last-child {
-      border-bottom: 0;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .cuvee-color {
       min-width: 4.5rem;
       padding: 0.1rem 0.6rem;
       border-radius: 999px;
-      font-size: 0.8rem;
+      font: 500 0.85rem var(--sans);
       text-align: center;
     }
 
     .cuvee-color.rouge {
-      background: #7b1e2b;
+      background: var(--carignan);
       color: #fff;
     }
 
     .cuvee-color.blanc {
       background: #f3e7b8;
-      color: #5c3317;
+      color: var(--schiste);
     }
 
     .cuvee-color.rose {
       background: #f4c7c3;
-      color: #5c3317;
+      color: var(--schiste);
     }
 
-    .contact-info {
-      background: #faf8f6;
-      padding: 1.5rem;
+    /* Visite */
+    .visit-intro {
+      max-width: 40rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .visit-booking {
+      background: var(--paper);
       border-radius: 8px;
-      border-left: 4px solid #8b4513;
-    }
-
-    .contact-info p {
-      margin-bottom: 0.5rem;
-      text-align: left;
-    }
-
-    .contact-info strong {
-      color: #5c3317;
-      display: inline-block;
-      min-width: 80px;
-    }
-
-    a {
-      color: #8b4513;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    a:hover {
-      color: #5c3317;
-      text-decoration: underline;
-    }
-
-    .cta-box {
-      background: #8b4513;
-      color: white;
-      padding: 1.8rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .cta-box p {
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .cta-box a {
-      color: white;
-      background: #5c3317;
-      padding: 0.8rem 2rem;
-      border-radius: 5px;
-      display: inline-block;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .cta-box a:hover {
-      background: #3d2110;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #95a5a6;
-      font-size: 0.85rem;
-      background: #f8f9fa;
+      padding: clamp(1.25rem, 3vw, 2.5rem);
     }
 
     #vinyaqui-widget {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       /* Couleurs alignées sur la page */
-      --vw-primary: #8b4513;
-      --vw-primary-hover: #5c3317;
-      --vw-primary-light: #faf8f6;
-      --vw-text: #2c3e50;
-      --vw-text-muted: #7f8c8d;
-      --vw-border: #e8d5c4;
-      --vw-font: 'Georgia', serif;
+      --vw-primary: #b4501a;
+      --vw-primary-hover: #8a3c12;
+      --vw-primary-light: #eef0ee;
+      --vw-text: #2b2d2f;
+      --vw-text-muted: #55595c;
+      --vw-border: #d9dcd8;
+      --vw-font: 'Alegreya Sans', 'Helvetica Neue', Arial, sans-serif;
       --vw-radius: 8px;
       --vw-radius-sm: 5px;
       --vw-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     }
 
     #vinyaqui-widget .vw-select:focus {
-      border-color: #8b4513;
-      box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.15);
+      border-color: #b4501a;
+      box-shadow: 0 0 0 3px rgba(180, 80, 26, 0.15);
     }
 
     #vinyaqui-widget .vw-alert--info {
-      background: #faf8f6;
-      border-color: #e8d5c4;
-      color: #5c3317;
+      background: #eef0ee;
+      border-color: #d9dcd8;
+      color: #2b2d2f;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
+    .cta-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem 2rem;
+      margin-top: 2rem;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      background: var(--schiste);
+      color: #fff;
+      border-radius: 8px;
+    }
 
-      main {
-        padding: 1.5rem 1.2rem;
-      }
+    .cta-box p {
+      margin: 0;
+      font-size: 1.25rem;
+    }
 
-      .cuvee-feature {
-        grid-template-columns: 1fr;
-      }
+    .cta-box strong {
+      display: block;
+      font-size: 1.5rem;
+    }
 
+    /* Contact */
+    #contact .split {
+      align-items: start;
+    }
+
+    #contact h3 {
+      margin-top: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-info {
+      font-family: var(--sans);
+      font-size: 1.15rem;
+    }
+
+    .contact-info dl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info dt {
+      color: var(--schiste-soft);
+    }
+
+    .contact-info dd {
+      font-weight: 500;
+      overflow-wrap: anywhere;
     }
 
     .map-section iframe,
     .map-placeholder {
       width: 100%;
-      height: 320px;
+      height: 380px;
       border: 0;
       border-radius: 8px;
     }
@@ -399,8 +862,8 @@
       gap: 0.75rem;
       padding: 1rem;
       text-align: center;
-      background: #f5efe9;
-      color: #5c3317;
+      background: var(--pierre);
+      color: var(--schiste);
     }
 
     .map-placeholder a,
@@ -414,10 +877,47 @@
     .map-placeholder button,
     .cookie-banner button {
       padding: 0.5rem 1.2rem;
-      border-radius: 6px;
-      border: 1px solid #8b4513;
-      background: #8b4513;
+      border-radius: 999px;
+      border: 1px solid var(--rouille);
+      background: var(--rouille);
       color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+    }
+
+    .vinyaqui-backlink {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    /* ---------- Pied de page ---------- */
+
+    footer {
+      padding: 2.5rem var(--gutter);
+      background: var(--schiste);
+      color: #c4c8c5;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 2rem;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    .footer-top {
+      text-decoration: none;
     }
 
     .cookie-banner {
@@ -429,10 +929,12 @@
       margin: 0 auto;
       padding: 1rem 1.25rem;
       background: #fff;
-      border: 1px solid #e8d5c4;
+      color: var(--schiste);
+      border: 1px solid var(--line);
       border-radius: 10px;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
-      font-size: 0.9rem;
+      font-family: var(--sans);
+      font-size: 1rem;
       z-index: 1000;
     }
 
@@ -448,7 +950,7 @@
 
     .cookie-banner button.secondary {
       background: #fff;
-      color: #8b4513;
+      color: var(--rouille);
     }
 
     .cookie-link {
@@ -459,139 +961,186 @@
     }
   </style>
   <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css?v=1.4">
-  <!-- Surcharge après le CSS du widget pour imposer le thème marron (le .vw-widget redéfinit le bleu par défaut) -->
+  <!-- Surcharge après le CSS du widget pour imposer le thème du domaine (le .vw-widget redéfinit le bleu par défaut) -->
   <style>
     #vinyaqui-widget .vw-widget {
-      --vw-primary: #8b4513;
-      --vw-primary-hover: #5c3317;
-      --vw-primary-light: #faf8f6;
-      --vw-text: #2c3e50;
-      --vw-text-muted: #7f8c8d;
-      --vw-border: #e8d5c4;
-      --vw-font: 'Georgia', serif;
+      --vw-primary: #b4501a;
+      --vw-primary-hover: #8a3c12;
+      --vw-primary-light: #eef0ee;
+      --vw-text: #2b2d2f;
+      --vw-text-muted: #55595c;
+      --vw-border: #d9dcd8;
+      --vw-font: 'Alegreya Sans', 'Helvetica Neue', Arial, sans-serif;
       --vw-radius: 8px;
       --vw-radius-sm: 5px;
       --vw-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     }
 
     #vinyaqui-widget .vw-widget .vw-select:focus {
-      box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.15);
+      box-shadow: 0 0 0 3px rgba(180, 80, 26, 0.15);
     }
 
     #vinyaqui-widget .vw-widget .vw-alert--info {
-      background: #faf8f6;
-      border-color: #e8d5c4;
-      color: #5c3317;
+      background: #eef0ee;
+      border-color: #d9dcd8;
+      color: #2b2d2f;
     }
 
     #vinyaqui-widget .vw-widget .vw-backlink-wrap {
       text-align: center;
     }
-
-    .vinyaqui-backlink {
-      display: block;
-      margin-top: 0.75rem;
-      font-size: 0.95rem;
-      text-align: center;
-      text-decoration: underline;
-    }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <div class="header-content">
-        <img src="logo.webp" alt="Logo du Domaine L'argiope" class="logo-small">
-        <div>
-          <h1>Domaine L'argiope</h1>
-          <p class="subtitle">Domaine viticole à Caudiès-de-Fenouillèdes</p>
-        </div>
-      </div>
-    </header>
+  <a class="skip-link" href="#histoire">Aller au contenu</a>
 
-    <main>
-      <figure class="photo-hero">
-        <img src="images/argiope1.webp" width="1000" height="1250"
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#accueil">
+        <img src="logo.webp" width="400" height="400" alt="">
+        L'argiope
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        Menu
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#histoire">Histoire</a></li>
+        <li><a href="#engagements">Engagements</a></li>
+        <li><a href="#argiope">Pourquoi l'argiope</a></li>
+        <li><a href="#cuvees">Cuvées</a></li>
+        <li><a href="#visite">Visite</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta"><a href="#visite" data-no-spy>Réserver</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-text">
+        <h1><span>Domaine</span>L'argiope</h1>
+        <p class="subtitle">Vins libres de vieilles vignes, à Caudiès-de-Fenouillèdes.</p>
+        <div class="hero-actions">
+          <a class="button" href="#visite">Réserver une balade</a>
+          <a class="link" href="#cuvees">Découvrir les cuvées</a>
+        </div>
+        <dl class="facts">
+          <div>
+            <dt>6,5 ha</dt>
+            <dd>de vignes</dd>
+          </div>
+          <div>
+            <dt>400 m</dt>
+            <dd>d'altitude</dd>
+          </div>
+          <div>
+            <dt>2023</dt>
+            <dd>première cuvée</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/argiope1.webp" width="1000" height="1250" fetchpriority="high"
           alt="Paul Bezert taillant ses vieilles vignes, un troupeau de moutons et les montagnes des Fenouillèdes en arrière-plan">
         <figcaption>Taille d'hiver, avec les moutons qui entretiennent les rangs.</figcaption>
       </figure>
+    </section>
 
-      <section>
-        <h2>Notre histoire</h2>
-        <p>
-          Paul Bezert s'est installé en 2023 à Caudiès-de-Fenouillèdes, au nord-ouest de la vallée de l'Agly.
-          Le Fenouillèdes, c'est l'Occitanie du pays catalan : on y parlait occitan quand le reste du Roussillon
-          parlait catalan. On dit aussi qu'il y pleut un peu plus qu'ailleurs… c'est faux.
-        </p>
-        <p>
-          Formé auprès de Loïc Roure au Domaine du Possible, Paul travaille 6,5 hectares de vignes à 400 m d'altitude,
-          sur des marnes schisteuses, dans un cadre préservé et sauvage. La cave est installée à Saint-Martin.
-        </p>
-        <p>
-          Loin des circuits touristiques, le domaine propose une
-          <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
-            target="_blank" rel="noopener">balade dans les vignes suivie d'une dégustation</a>, à réserver sur
-          Viny'aqui, pour découvrir le travail du vigneron au fil des saisons et des cépages.
-        </p>
-      </section>
-
-      <div class="photo-grid">
-        <img src="images/argiope2.webp" width="1000" height="1000" loading="lazy"
+    <section class="section" id="histoire">
+      <div class="section-inner split">
+        <div class="prose">
+          <h2>Notre histoire</h2>
+          <p>
+            Paul Bezert s'est installé en 2023 à Caudiès-de-Fenouillèdes, au nord-ouest de la vallée de l'Agly.
+            Le Fenouillèdes, c'est l'Occitanie du pays catalan : on y parlait occitan quand le reste du Roussillon
+            parlait catalan. On dit aussi qu'il y pleut un peu plus qu'ailleurs… c'est faux.
+          </p>
+          <p>
+            Formé auprès de Loïc Roure au Domaine du Possible, Paul travaille 6,5 hectares de vignes à 400 m d'altitude,
+            sur des marnes schisteuses, dans un cadre préservé et sauvage. La cave est installée à Saint-Martin.
+          </p>
+          <p>
+            Loin des circuits touristiques, le domaine propose une
+            <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
+              target="_blank" rel="noopener">balade dans les vignes suivie d'une dégustation</a>, à réserver sur
+            Viny'aqui, pour découvrir le travail du vigneron au fil des saisons et des cépages.
+          </p>
+        </div>
+        <img class="rounded story-photo" src="images/argiope2.webp" width="1000" height="1000" loading="lazy"
           alt="Rangs de vigne en été au domaine L'argiope, sous le soleil des Fenouillèdes">
-        <img src="images/argiope-biodiv.webp" width="1000" height="1000" loading="lazy"
-          alt="Nid d'oiseau avec ses œufs, caché dans le feuillage d'une vigne du domaine">
       </div>
+    </section>
 
-      <section>
-        <h2>Nos engagements</h2>
-        <p>
-          Les vignes sont conduites en agriculture biologique, en laissant toute sa place à la vie sauvage :
-          oiseaux, insectes et moutons partagent les parcelles. Au chai, tout est vinifié en grappes entières,
-          sans soufre pendant la vinification : seulement 10 mg/l à la mise en bouteille.
-        </p>
-      </section>
+    <section class="section is-dark" id="engagements">
+      <div class="section-inner split is-reversed">
+        <div class="prose">
+          <h2>Nos engagements</h2>
+          <p>
+            Les vignes sont conduites en agriculture biologique, en laissant toute sa place à la vie sauvage :
+            oiseaux, insectes et moutons partagent les parcelles. Au chai, tout est vinifié en grappes entières,
+            sans soufre pendant la vinification : seulement 10 mg/l à la mise en bouteille.
+          </p>
+          <ul class="commitments">
+            <li><strong>À la vigne</strong> Agriculture biologique, moutons et vie sauvage entre les rangs.</li>
+            <li><strong>Au chai</strong> Vinification en grappes entières.</li>
+            <li><strong>Soufre</strong> Aucun pendant la vinification, 10 mg/l à la mise en bouteille.</li>
+          </ul>
+        </div>
+        <figure class="commitments-photo">
+          <img class="rounded" src="images/argiope-biodiv.webp" width="1000" height="1000" loading="lazy"
+            alt="Nid d'oiseau avec ses œufs, caché dans le feuillage d'une vigne du domaine">
+          <figcaption>Un nid caché dans le feuillage, au milieu des rangs.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-      <section class="argiope-story">
-        <h2>Pourquoi l'argiope ?</h2>
-        <img src="logo.webp" width="400" height="400" loading="lazy"
+    <section class="section argiope-section" id="argiope">
+      <div class="section-inner split">
+        <img class="argiope-emblem" src="logo.webp" width="400" height="400" loading="lazy"
           alt="Illustration d'une argiope frelon sur sa toile, emblème du domaine">
-        <p>
-          L'argiope frelon (<em>Argiope bruennichi</em>) est une araignée rayée de jaune, de noir et de blanc,
-          que l'on croise l'été dans les herbes hautes, entre les rangs de vigne. Malgré ses airs de guêpe,
-          elle est totalement inoffensive pour l'homme.
-        </p>
-        <p>
-          Sa signature : un ruban de soie en zigzag tissé au centre de sa toile, le stabilimentum. On le croit
-          utile pour attirer les insectes, ou pour éviter que les oiseaux ne foncent dans la toile. Son nom vient
-          d'Argiope, une nymphe de la mythologie grecque.
-        </p>
-        <p>
-          Elle ne s'installe que là où l'herbe pousse et où les insectes abondent : la voir dans les vignes, c'est
-          le signe d'un sol vivant. C'est elle qui a donné son nom au domaine.
-        </p>
-      </section>
+        <div class="prose">
+          <h2>Pourquoi l'argiope ?</h2>
+          <p>
+            L'argiope frelon (<span class="latin">Argiope bruennichi</span>) est une araignée rayée de jaune, de noir et de blanc,
+            que l'on croise l'été dans les herbes hautes, entre les rangs de vigne. Malgré ses airs de guêpe,
+            elle est totalement inoffensive pour l'homme.
+          </p>
+          <p>
+            Sa signature : un ruban de soie en zigzag tissé au centre de sa toile, le stabilimentum. On le croit
+            utile pour attirer les insectes, ou pour éviter que les oiseaux ne foncent dans la toile. Son nom vient
+            d'Argiope, une nymphe de la mythologie grecque.
+          </p>
+          <p>
+            Elle ne s'installe que là où l'herbe pousse et où les insectes abondent : la voir dans les vignes, c'est
+            le signe d'un sol vivant. C'est elle qui a donné son nom au domaine.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <section>
+    <section class="section is-stone" id="cuvees">
+      <div class="section-inner">
         <h2>Nos cuvées</h2>
         <div class="cuvee-feature">
-          <img src="images/argiope-bouteille.webp" width="1000" height="1000" loading="lazy"
+          <img class="rounded" src="images/argiope-bouteille.webp" width="1000" height="1000" loading="lazy"
             alt="Bouteille de la cuvée À brûle pourpoint du domaine L'argiope">
-          <div>
+          <div class="prose">
             <h3>À brûle pourpoint</h3>
-            <p class="cuvee-meta">Rouge · Millésime 2023 · 12 % vol.</p>
+            <p class="cuvee-meta">Rouge, millésime 2023, 12 % vol.</p>
             <p>
               La première cuvée du domaine : carignan de vieilles vignes et syrah, pour un rouge léger et
               expressif, aux arômes de fruits rouges mûrs et d'épices, aux tanins soyeux.
             </p>
-            <p>
+            <p class="serving">
               Servir autour de 16 °C, idéalement carafé une demi-heure avant. Parfait avec un gigot d'agneau
               aux herbes ou un magret de canard.
             </p>
           </div>
         </div>
 
-        <h3>La gamme</h3>
+        <h3 class="range-heading">La gamme</h3>
         <ul class="cuvee-list">
           <li><span class="cuvee-color rouge">Rouge</span> Carignan &amp; syrah</li>
           <li><span class="cuvee-color rouge">Rouge</span> Syrah &amp; macabeu</li>
@@ -599,29 +1148,22 @@
           <li><span class="cuvee-color blanc">Blanc</span> 100 % macabeu</li>
           <li><span class="cuvee-color rose">Rosé</span> 100 % syrah</li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>Contact</h2>
-        <div class="contact-info">
-          <p><strong>Nom :</strong> Paul Bezert</p>
-          <p><strong>Téléphone :</strong> <a href="tel:+330629387357">06 29 38 73 57</a></p>
-          <p><strong>Email :</strong> <a href="mailto:contact@largiope.fr">contact@largiope.fr</a></p>
+    <section class="section" id="visite">
+      <div class="section-inner">
+        <div class="visit-intro">
+          <h2>Balade et dégustation</h2>
+          <p>
+            Une balade guidée dans les vignes, loin des sentiers battus, pour découvrir le travail du vigneron
+            au fil des saisons et des cépages, suivie d'une dégustation des vins du domaine.
+            Choisissez votre date ci-dessous.
+          </p>
         </div>
-      </section>
 
-      <section class="map-section">
-        <h2>Nous trouver</h2>
-        <div id="map-container">
-          <div class="map-placeholder">
-            <p>La carte Google Maps est désactivée tant que vous n'avez pas accepté les cookies.</p>
-            <button type="button" data-cookie-accept>Afficher la carte</button>
-            <a href="https://www.google.com/maps?q=42.7856902,2.4691413" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Widget de réservation Vinyaqui -->
+        <div class="visit-booking">
+          <!-- Widget de réservation Vinyaqui -->
 <div id="vinyaqui-widget"></div>
 <a class="vinyaqui-backlink" href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener">Balade et dégustation au Domaine L'argiope : voir l'expérience sur Viny'aqui</a>
 <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css?v=1.4">
@@ -632,19 +1174,53 @@
   data-api-key="vk_mxXzZPxHzOt8ceDX3143VOVY3vmDTohiisZg803X01AUHUoBG8ID1qFdutLD"
   data-target="#vinyaqui-widget"
 ></script>
+        </div>
 
-      <div class="cta-box">
-        <p><strong>Envie de découvrir nos vins ?</strong></p>
-        <p>Réservez votre expérience œnotouristique en ligne</p>
-        <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
-          target="_blank" rel="noopener">Réserver sur Viny'aqui</a>
+        <div class="cta-box">
+          <p><strong>Envie de découvrir nos vins ?</strong> Réservez votre expérience œnotouristique en ligne.</p>
+          <a class="button" href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
+            target="_blank" rel="noopener">Réserver sur Viny'aqui</a>
+        </div>
       </div>
-    </main>
+    </section>
 
-    <footer>
+    <section class="section is-stone map-section" id="contact">
+      <div class="section-inner split">
+        <div class="contact-info">
+          <h2>Contact</h2>
+          <dl>
+            <dt>Vigneron</dt>
+            <dd>Paul Bezert</dd>
+            <dt>Téléphone</dt>
+            <dd><a href="tel:+33629387357">06 29 38 73 57</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:contact@largiope.fr">contact@largiope.fr</a></dd>
+            <dt>Adresse</dt>
+            <dd>66220 Caudiès-de-Fenouillèdes</dd>
+          </dl>
+          <a class="button" href="#visite">Réserver une balade</a>
+        </div>
+        <div>
+          <h3>Nous trouver</h3>
+          <div id="map-container">
+            <div class="map-placeholder">
+              <p>La carte Google Maps est désactivée tant que vous n'avez pas accepté les cookies.</p>
+              <button type="button" data-cookie-accept>Afficher la carte</button>
+              <a href="https://www.google.com/maps?q=42.7856902,2.4691413" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
       <p>© Domaine L'argiope – Tous droits réservés · <button type="button" class="cookie-link" data-cookie-manage>Gérer les cookies</button></p>
-    </footer>
-  </div>
+      <a class="footer-top" href="#accueil">Haut de page</a>
+    </div>
+  </footer>
+
   <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Gestion des cookies" hidden>
     <p>Ce site utilise des cookies de mesure d'audience (Google Analytics) et affiche une carte Google Maps. Vous pouvez accepter ou refuser ces cookies ; ce choix est modifiable à tout moment via « Gérer les cookies ».</p>
     <div class="cookie-actions">
@@ -652,6 +1228,53 @@
       <button type="button" class="secondary" data-cookie-refuse>Refuser</button>
     </div>
   </div>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.getElementById('nav-links');
+
+      function closeMenu() {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+
+      toggle.addEventListener('click', function () {
+        var isOpen = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      links.addEventListener('click', function (event) {
+        if (event.target.closest('a')) { closeMenu(); }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && links.classList.contains('is-open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+
+      // Met en évidence dans le menu la section en cours de lecture
+      if (!('IntersectionObserver' in window)) { return; }
+      var navLinks = links.querySelectorAll('a[href^="#"]:not([data-no-spy])');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) { return; }
+          navLinks.forEach(function (link) {
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.setAttribute('aria-current', 'true');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      document.querySelectorAll('main > section[id]').forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
 
   <script>
     (function () {
