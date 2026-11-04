@@ -2,15 +2,6 @@
 <html lang="fr">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HRSW2PQ18"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-2HRSW2PQ18');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L'argiope – Domaine viticole à Caudiès-de-Fenouillèdes</title>
@@ -27,9 +18,11 @@
     content="Domaine viticole à Caudiès-de-Fenouillèdes. Vins libres et visites sur rendez-vous.">
   <meta property="og:url" content="https://largiope.fr">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://largiope.fr/logo.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://largiope.fr/logo.webp">
   <meta name="twitter:title" content="L'argiope – Domaine viticole à Caudiès-de-Fenouillèdes">
   <meta name="twitter:description"
     content="Domaine viticole indépendant à Caudiès-de-Fenouillèdes. Vins libres et visites sur rendez-vous.">
@@ -42,8 +35,7 @@
     "name": "L'argiope",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "pas de rue",
-      "addressLocality": "Saint-Martin-de-Fenouillet, France",
+      "addressLocality": "Caudiès-de-Fenouillèdes",
       "postalCode": "66220",
       "addressRegion": "Pyrénées-Orientales",
       "addressCountry": "FR"
@@ -53,7 +45,7 @@
       "latitude": "42.7856902",
       "longitude": "2.4691413"
     },
-    "telephone": "+33[TÉLÉPHONE]",
+    "telephone": "+33629387357",
     "email": "contact@largiope.fr",
     "url": "https://largiope.fr",
     "priceRange": "€€",
@@ -64,7 +56,7 @@
       "closes": "18:00"
     },
     "sameAs": [
-      "https://vinyaqui.com/st_activity/balade-dans-les-vignes-et-degustation-a-caudies-de-fenouilledes"
+      "https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
     ],
     "description": "Domaine viticole créé en 2023 par Paul Bezert. 6,5 ha de vignes préservées au cœur des Fenouillèdes. Balade guidée immersive dans un environnement sauvage, loin des sentiers battus."
   }
@@ -266,6 +258,81 @@
       }
 
     }
+
+    .map-section iframe,
+    .map-placeholder {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    .map-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      background: #f5efe9;
+      color: #5c3317;
+    }
+
+    .map-placeholder a,
+    .map-placeholder button,
+    .cookie-banner button,
+    .cookie-link {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .map-placeholder button,
+    .cookie-banner button {
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      border: 1px solid #8b4513;
+      background: #8b4513;
+      color: #fff;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+      background: #fff;
+      border: 1px solid #e8d5c4;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+      font-size: 0.9rem;
+      z-index: 1000;
+    }
+
+    .cookie-banner[hidden] {
+      display: none;
+    }
+
+    .cookie-banner .cookie-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .cookie-banner button.secondary {
+      background: #fff;
+      color: #8b4513;
+    }
+
+    .cookie-link {
+      background: none;
+      border: 0;
+      color: inherit;
+      text-decoration: underline;
+    }
   </style>
   <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css?v=1.4">
   <!-- Surcharge après le CSS du widget pour imposer le thème marron (le .vw-widget redéfinit le bleu par défaut) -->
@@ -325,11 +392,11 @@
           un élevage soigné pour révéler toute la complexité de nos cuvées. Chaque
           millésime raconte l'histoire d'une année, d'un terroir et d'un savoir-faire.
         </p>
-        <h2>Les cépages</h3>
+        <h2>Les cépages</h2>
           <p>
             Macabeu, lledoner pelut, carignan, syrah
           </p>
-          <h2>Nos engagements</h3>
+          <h2>Nos engagements</h2>
             <p>
               Agriculture biologique certifiée / Vinification naturelle /
               Gestion durable de la vigne
@@ -341,20 +408,22 @@
         <div class="contact-info">
           <p><strong>Nom :</strong> Paul Bezert</p>
           <p><strong>Téléphone :</strong> <a href="tel:+330629387357">06 29 38 73 57</a></p>
-          <p><strong>Email :</strong> <a href="mailto:bezert.paul@laposte.net">bezert.paul@laposte.net</a></p>
+          <p><strong>Email :</strong> <a href="mailto:contact@largiope.fr">contact@largiope.fr</a></p>
+        </div>
+      </section>
+
+      <section class="map-section">
+        <h2>Nous trouver</h2>
+        <div id="map-container">
+          <div class="map-placeholder">
+            <p>La carte Google Maps est désactivée tant que vous n'avez pas accepté les cookies.</p>
+            <button type="button" data-cookie-accept>Afficher la carte</button>
+            <a href="https://www.google.com/maps?q=42.7856902,2.4691413" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps</a>
+          </div>
         </div>
       </section>
 
       <!-- Widget de réservation Vinyaqui -->
-      <!-- Widget de réservation Vinyaqui
-      <div id="vinyaqui-widget"></div>
-      <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css">
-      <script src="https://vinyaqui.com/widget/booking-widget.js?v=1.1" data-api-base="https://vinyaqui.com/api"
-        data-activity="balade-dans-les-vignes-et-degustation-au-domaine-largiope"
-        data-api-key="vk_aRQBDAQDV2Aes0FcbpSf2SZA1iOEV2RJhxao8kUNypmgsUZiP3coTvoCshlz"
-        data-target="#vinyaqui-widget"></script>
-       -->
-<!-- Widget de réservation Vinyaqui -->
 <div id="vinyaqui-widget"></div>
 <a class="vinyaqui-backlink" href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;margin-top:12px;font-size:13px;color:#6b7280;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">Réservez cette expérience sur Viny'aqui</a>
 <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css?v=1.4">
@@ -369,15 +438,82 @@
       <div class="cta-box">
         <p><strong>Envie de découvrir nos vins ?</strong></p>
         <p>Réservez votre expérience œnotouristique en ligne</p>
-        <a href="https://vinyaqui.com/st_activity/balade-dans-les-vignes-et-degustation-a-caudies-de-fenouilledes"
+        <a href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope"
           target="_blank" rel="noopener">Réserver sur Viny'aqui</a>
       </div>
     </main>
 
     <footer>
-      <p>© Domaine L'argiope – Tous droits réservés</p>
+      <p>© Domaine L'argiope – Tous droits réservés · <button type="button" class="cookie-link" data-cookie-manage>Gérer les cookies</button></p>
     </footer>
   </div>
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Gestion des cookies" hidden>
+    <p>Ce site utilise des cookies de mesure d'audience (Google Analytics) et affiche une carte Google Maps. Vous pouvez accepter ou refuser ces cookies ; ce choix est modifiable à tout moment via « Gérer les cookies ».</p>
+    <div class="cookie-actions">
+      <button type="button" data-cookie-accept>Accepter</button>
+      <button type="button" class="secondary" data-cookie-refuse>Refuser</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = 'largiope_cookie_consent';
+      var GA_ID = 'G-T5MY7XYJL2';
+      var banner = document.getElementById('cookie-banner');
+      var mapContainer = document.getElementById('map-container');
+      var placeholderHtml = mapContainer.innerHTML;
+
+      function getChoice() {
+        try { return localStorage.getItem(KEY); } catch (e) { return null; }
+      }
+
+      function setChoice(value) {
+        try { localStorage.setItem(KEY, value); } catch (e) {}
+      }
+
+      function loadAnalytics() {
+        if (window.gtag) { return; }
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { dataLayer.push(arguments); };
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      }
+
+      function loadMap() {
+        mapContainer.innerHTML = '<iframe title="Carte Google Maps du Domaine L\'argiope" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=42.7856902,2.4691413&z=13&output=embed"></iframe>';
+      }
+
+      function apply(choice) {
+        banner.hidden = true;
+        if (choice === 'accepted') {
+          loadAnalytics();
+          loadMap();
+        } else {
+          mapContainer.innerHTML = placeholderHtml;
+        }
+      }
+
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+        if (target.closest('[data-cookie-accept]')) {
+          setChoice('accepted');
+          apply('accepted');
+        } else if (target.closest('[data-cookie-refuse]')) {
+          setChoice('refused');
+          if (window.gtag) { window.location.reload(); } else { apply('refused'); }
+        } else if (target.closest('[data-cookie-manage]')) {
+          banner.hidden = false;
+        }
+      });
+
+      var choice = getChoice();
+      if (choice) { apply(choice); } else { banner.hidden = false; }
+    })();
+  </script>
 </body>
 
 </html>
