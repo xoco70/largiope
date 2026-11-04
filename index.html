@@ -752,9 +752,31 @@
     }
 
     /* Visite */
-    .visit-intro {
-      max-width: 40rem;
+    .visit-layout {
+      align-items: start;
       margin-bottom: 2.5rem;
+    }
+
+    .visit-intro {
+      max-width: 36rem;
+    }
+
+    .visit-steps {
+      list-style: none;
+      margin: 1.5rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .visit-steps li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .visit-steps strong {
+      display: block;
+      font-family: var(--sans);
+      color: var(--rouille);
+      font-weight: 700;
     }
 
     .visit-booking {
@@ -1153,17 +1175,31 @@
 
     <section class="section" id="visite">
       <div class="section-inner">
-        <div class="visit-intro">
-          <h2>Balade et dégustation</h2>
-          <p>
-            Une balade guidée dans les vignes, loin des sentiers battus, pour découvrir le travail du vigneron
-            au fil des saisons et des cépages, suivie d'une dégustation des vins du domaine.
-            Choisissez votre date ci-dessous.
-          </p>
-        </div>
+        <div class="split visit-layout">
+          <div class="visit-intro">
+            <h2>Balade et dégustation</h2>
+            <p>
+              Une balade guidée dans les vignes, loin des sentiers battus, pour découvrir le travail du vigneron
+              au fil des saisons, suivie d'une dégustation des vins du domaine. La visite se déroule toujours
+              en deux temps :
+            </p>
+            <ol class="visit-steps">
+              <li>
+                <strong>Dans les vignes</strong>
+                Une promenade à travers les parcelles pour parler du terroir, des cépages, de la conduite
+                de la vigne et de la vie sauvage qui partage les rangs.
+              </li>
+              <li>
+                <strong>Au domaine</strong>
+                Une dégustation des vins du domaine, pour retrouver dans le verre ce que l'on vient de voir
+                dans les vignes.
+              </li>
+            </ol>
+            <p>Choisissez votre date dans le calendrier.</p>
+          </div>
 
-        <div class="visit-booking">
-          <!-- Widget de réservation Vinyaqui -->
+          <div class="visit-booking">
+            <!-- Widget de réservation Vinyaqui -->
 <div id="vinyaqui-widget"></div>
 <a class="vinyaqui-backlink" href="https://vinyaqui.com/activities/balade-dans-les-vignes-et-degustation-au-domaine-largiope" target="_blank" rel="noopener">Balade et dégustation au Domaine L'argiope : voir l'expérience sur Viny'aqui</a>
 <link rel="stylesheet" href="https://vinyaqui.com/widget/booking-widget.css?v=1.4">
@@ -1174,6 +1210,7 @@
   data-api-key="vk_mxXzZPxHzOt8ceDX3143VOVY3vmDTohiisZg803X01AUHUoBG8ID1qFdutLD"
   data-target="#vinyaqui-widget"
 ></script>
+          </div>
         </div>
 
         <div class="cta-box">
